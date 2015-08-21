@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Title of the document</title>
+	<meta charset="UTF-8">
+	<title>Paul's test page</title>
 </head>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('#delayThis').delay(1000).show(0);
+	});
+</script>
+
 <body>
-This is page2
+	<div id="delayThis" style="display:none;"><p>This is page2 - testing delay before text is visible</p></div>
 </body>
 
 </html>
