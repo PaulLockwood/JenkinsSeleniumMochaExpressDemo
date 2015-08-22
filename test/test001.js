@@ -57,7 +57,8 @@ test.describe('Data driven Find Test on Page tests (wip)', function() {
   // Test Setup. Runs before the test: initialize webdriver
   test.before(function() {
     driver = new webdriver.Builder()
-      .forBrowser('firefox')
+      // .forBrowser('firefox')
+      .forBrowser('phantomjs')
       .build();
   });
 
