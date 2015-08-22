@@ -1,16 +1,20 @@
 // mocha -t 10000 test001.js
 
-var webdriver = require('selenium-webdriver'),
+var winston = require('winston'),
+  webdriver = require('selenium-webdriver'),
   test = require('selenium-webdriver/testing'),
   By = webdriver.By,
   until = webdriver.until,
   assert = require('assert'),
   timeoutMilliseconds = 5000;
 
+// == Enable logging
+//winston.level = 'debug';
+
 // == Functions ==
 function lookForTextInPageBody(driver, expectedText) {
   return driver.getSource().then(function(text) {
-    // console.log('plugh1'); // console.log(text);
+    // winston.debug('plugh1'); // winston.debug(text);
     return (text.indexOf(expectedText) > -1)
   });
 }
@@ -21,30 +25,30 @@ function runGenericTest(driver, baseUrl, url, expectedText) {
   var promise = driver.getTitle();
 
   //xyzzy - Replace this block with WaitForVisible
-  console.log('1 (syncronous code path)');
+  winston.debug('1 (syncronous code path)');
   driver.wait(function() {
     return driver.getTitle().then(function(title) {
-      console.log('2 (inside a promise)');
-      //console.log(title);
+      winston.debug('2 (inside a promise)');
+      //winston.debug(title);
       return title.length > -1;
     });
   }, timeoutMilliseconds);
 
   // == Mocha Tests ==
   // Assert that the expected text is on the page
-  console.log('3 (syncronous code path)');
+  winston.debug('3 (syncronous code path)');
   driver.getTitle().then(function() {
-    console.log("4 (inside a promise)");
+    winston.debug("4 (inside a promise)");
     //var bodyText = driver.findElement(By.tagName('body'));
     var body = driver.findElement(By.tagName('body'));
     body.getText().then(function(bodyText) {
-      console.log("5 (inside a promise)");
+      winston.debug("5 (inside a promise)");
       var stringFound = bodyText.indexOf(expectedText) > -1;
       assert(stringFound);
     });
   })
 
-  console.log('7 (syncronous code path)');
+  winston.debug('7 (syncronous code path)');
 
 }
 // END == Functions ==
@@ -79,7 +83,7 @@ test.describe('Data driven Find Test on Page tests (wip)', function() {
     for (var i = 0; i < jsonData.length; i++) {
       var curItem = jsonData[i];
 
-      console.log(curItem.url, curItem.expected);
+      winston.debug(curItem.url, curItem.expected);
       runGenericTest(driver, baseUrl, curItem.url, curItem.expected);
     }
 
