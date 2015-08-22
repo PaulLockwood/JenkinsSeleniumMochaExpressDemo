@@ -17,6 +17,7 @@
   "dependencies": {
     "express": "^4.13.3",
     "forever": "^0.15.1",
-    "forever-monitor": "^1.6.0"
+    "forever-monitor": "^1.6.0",
+    "selenium-webdriver": "^2.46.1"
   }
 }

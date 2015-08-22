@@ -63,7 +63,7 @@ test.describe('Data driven Find Test on Page tests (wip)', function() {
 
   // Actual test - note - we do multiple test from this single test.it
   test.it('Load page and wait for expected text string(s) to appear', function() {
-    var baseUrl = 'http://192.168.1.44:3000/';
+    var baseUrl = 'http://localhost:3000/';
     var jsonData = [{
       "url": "page1.html",
       "expected": "page1"
