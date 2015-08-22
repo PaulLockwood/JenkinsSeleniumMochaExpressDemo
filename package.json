@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node app.js",
     "test": "mocha -t 10000 --recursive -R xunit test > test-reports.xml"
-
   },
   "repository": {
     "type": "git",
@@ -19,6 +18,7 @@
     "express": "^4.13.3",
     "forever": "^0.15.1",
     "forever-monitor": "^1.6.0",
-    "selenium-webdriver": "^2.46.1"
+    "selenium-webdriver": "^2.46.1",
+    "winston": "^1.0.1"
   }
 }
