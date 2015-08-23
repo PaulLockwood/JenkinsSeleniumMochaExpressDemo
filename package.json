@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "mocha -t 10000 --recursive -R xunit test > test-reports.xml"
+    "test": "mocha -t 10000 --recursive MochaTests",
+    "test_xunit": "mocha -t 10000 --recursive --reporter xunit MochaTests > test-reports.xml"
   },
   "repository": {
     "type": "git",
