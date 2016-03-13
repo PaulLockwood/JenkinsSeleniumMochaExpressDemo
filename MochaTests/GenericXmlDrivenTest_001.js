@@ -61,8 +61,8 @@ test.describe('Data driven Find Test on Page tests (wip)', function() {
   // Test Setup. Runs before the test: initialize webdriver
   test.before(function() {
     driver = new webdriver.Builder()
-      // .forBrowser('firefox')
-      .forBrowser('phantomjs')
+       .forBrowser('firefox')
+      //.forBrowser('phantomjs')
       .build();
   });
 
@@ -72,13 +72,15 @@ test.describe('Data driven Find Test on Page tests (wip)', function() {
     var jsonData = [{
       "url": "page1.html",
       "expected": "page1"
-    }, {
-      "url": "page3.html",
-      "expected": "page3"
-    }, {
-      "url": "page4.html",
-      "expected": "page4"
-    }];
+    }
+    //, {
+    //   "url": "page3.html",
+    //   "expected": "page3"
+    // }, {
+    //   "url": "page4.html",
+    //   "expected": "page4"
+    //}
+  ];
 
     for (var i = 0; i < jsonData.length; i++) {
       var curItem = jsonData[i];
