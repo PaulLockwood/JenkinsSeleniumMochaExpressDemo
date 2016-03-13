@@ -1,6 +1,6 @@
 var assert = require("assert")
 
-describe('mocha', function(){  
+describe('mocha', function() {
   // it('should fail when throwing an error', function(){
   //   throw "FAIL"
   // })
@@ -9,10 +9,9 @@ describe('mocha', function(){
   //   assert(false)
   // })
 
-  it('should pass when finishing without error', function(){
-  })
+  it('should pass when finishing without error', function() {})
 
-  it('should pass when asserting true', function(){
+  it('should pass when asserting true', function() {
     assert(true)
   })
 
